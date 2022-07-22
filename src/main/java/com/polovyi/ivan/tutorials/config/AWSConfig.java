@@ -49,6 +49,7 @@ public class AWSConfig {
     public NotificationMessagingTemplate notificationMessagingTemplate() {
         NotificationMessagingTemplate notificationMessagingTemplate = new NotificationMessagingTemplate(amazonSNS());
         MappingJackson2MessageConverter mappingJackson2MessageConverter = new MappingJackson2MessageConverter();
+        mappingJackson2MessageConverter.setSerializedPayloadClass(String.class);
         mappingJackson2MessageConverter.getObjectMapper().registerModule(new JavaTimeModule());
         notificationMessagingTemplate.setMessageConverter(mappingJackson2MessageConverter);
         notificationMessagingTemplate.setDefaultDestinationName(topicName);

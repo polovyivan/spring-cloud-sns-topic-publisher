@@ -47,7 +47,6 @@ public class PurchaseTransactionService {
         notificationMessagingTemplate.send(topicName, message);
 
         //Using convertAndSend method
-
         log.info("Method convertAndSend args <<object dto>>. Using default topic.");
         dto.setSentFrom("Method convertAndSend args <<object dto>>. Using default topic.");
         notificationMessagingTemplate.convertAndSend(new GenericMessage<>(dto));
@@ -62,8 +61,6 @@ public class PurchaseTransactionService {
         notificationMessagingTemplate.convertAndSend(topicName, dto, messageHeaders);
 
         // Using sendNotification method
-
-        //        Convenience method that sends a notification with the given message and subject to the destination. The subject is sent as header as defined in the SNS message JSON formats.
         log.info("Method sendNotification args <<object dto>>, <<subject>>. Using default topic.");
         dto.setSentFrom("Method sendNotification args <<object dto>>, <<subject>>. Using default topic.");
         notificationMessagingTemplate.sendNotification(dto, "purchase-transaction-subject");
