@@ -1,0 +1,38 @@
+{
+	"info": {
+		"_postman_id": "fae1ee0b-e6ec-4934-a98f-28d75a78175f",
+		"name": "spring-cloud-sns-topic-publisher",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "purchase-transaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"paymentType\": \"VISA\",\n    \"amount\": 101.20,\n    \"customerId\": \"c2365f3a-7441-4fc3-9045-68596b632609\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/spring-cloud-sns-topic-publisher/purchase-transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"spring-cloud-sns-topic-publisher",
+						"purchase-transactions"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
